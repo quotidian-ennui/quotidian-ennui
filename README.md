@@ -6,7 +6,3 @@ I have excellent knowledge of many different technology stacks, and can recognis
 
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=quotidian-ennui&layout=compact&theme=dark&langs_count=10)](https://github.com/anuraghazra/github-readme-stats) 
 
-[![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=quotidian-ennui&theme=dark)](https://git.io/streak-stats)
-
-
-
