@@ -2,7 +2,7 @@
 name: metrics
 on:
   schedule:
-    - cron: '15 05 * * *'
+    - cron: '15 05 1 * *'
   workflow_dispatch:
   push:
     branches: main
