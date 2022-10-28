@@ -1,0 +1,31 @@
+# Visit https://github.com/lowlighter/metrics/blob/master/action.yml for full reference
+name: readme-svg
+on:
+  schedule:
+    - cron: '15 03 1 * *'
+  workflow_dispatch:
+  push:
+    branches: main
+
+jobs:
+  readme-svg:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - uses: hmarr/debug-action@v2
+        name: debug
+      - uses: Platane/snk@v2
+        id: badger-badger-snake-snake
+        name: Generate Snake
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: github-snake.svg
+      - name: Commit Snake
+        id: git-commit-snake
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "<>"
+          git add github-snake.svg
+          git commit -m "Update github-snake.svg - [skip actions]" github-snake.svg
+          git push origin ${{ env.GITHUB_REF_NAME }}
