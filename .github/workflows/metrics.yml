@@ -12,13 +12,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
+        id: readme-svg
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
           # Options
-          user: quotidian-ennui
+          filename: github-metrics.svg
+          user: ${{ github.repository_owner }}
           template: classic
-          base: header, activity, community, repositories, metadata
+          base: header, community, repositories, metadata
           config_timezone: Europe/London
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
@@ -35,3 +37,8 @@ jobs:
           plugin_habits: yes
           plugin_habits_facts: yes
           plugin_habits_charts: no
+      - uses: Platane/snk@v2
+        id: badger-badger-snake-snake
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: github-snake.svg

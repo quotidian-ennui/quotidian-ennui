@@ -6,3 +6,6 @@ I have excellent knowledge of many different technology stacks, and can recognis
 
 [![GitHub Stats](./github-metrics.svg)](https://github.com/lowlighter/metrics)
 
+---
+
+[![badger-badger-snake-snake](./github-snake.svg)](https://github.com/Platane/snk)
