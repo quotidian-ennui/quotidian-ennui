@@ -8,4 +8,4 @@ I have excellent knowledge of many different technology stacks, and can recognis
 
 ---
 
-[![badger-badger-snake-snake](https://raw.githubusercontent.com/quotidian-ennui/quotidian-ennui/snake/github-snake.svg)](https://github.com/Platane/snk)
+[![badger-badger-snake-snake](./github-snake.svg)](https://github.com/Platane/snk)
