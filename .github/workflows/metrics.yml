@@ -8,11 +8,11 @@ on:
     branches: main
 
 jobs:
-  github-metrics:
+  readme-svg:
     runs-on: ubuntu-latest
     steps:
       - uses: lowlighter/metrics@latest
-        id: readme-svg
+        id: github-metrics
         with:
           token: ${{ secrets.METRICS_TOKEN }}
 
@@ -20,7 +20,7 @@ jobs:
           filename: github-metrics.svg
           user: ${{ github.repository_owner }}
           template: classic
-          base: header, community, repositories, metadata
+          base: header, activity, community, repositories, metadata
           config_timezone: Europe/London
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
@@ -41,4 +41,11 @@ jobs:
         id: badger-badger-snake-snake
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: github-snake.svg
+          outputs: dist/github-snake.svg
+      - name: push graphics
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: main
+          build_dir: dist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
