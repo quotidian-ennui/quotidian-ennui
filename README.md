@@ -1,4 +1,4 @@
-## About Me
+cd .g## About Me
 
 Sometimes I have things to say; you can find my assorted ramblings for your reading pleasure [here](https://quotidian-ennui.github.io).
 
@@ -8,4 +8,8 @@ I have excellent knowledge of many different technology stacks, and can recognis
 
 ---
 
-[![badger-badger-snake-snake](./github-snake.svg)](https://github.com/Platane/snk)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="github-snake.svg" />
+  <img alt="github-snake" src="github-snake.svg" />
+</picture>

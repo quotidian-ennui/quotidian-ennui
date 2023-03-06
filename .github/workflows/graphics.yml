@@ -13,14 +13,14 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - uses: hmarr/debug-action@v2
-        name: debug
       - uses: Platane/snk@v2
         id: badger-badger-snake-snake
         name: Generate Snake
         with:
           github_user_name: ${{ github.repository_owner }}
-          outputs: github-snake.svg
+          outputs: |
+            github-snake.svg
+            github-snake-dark.svg?palette=github-dark
       - name: Commit Snake
         continue-on-error: true
         id: git-commit-snake
@@ -28,5 +28,6 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "<>"
           git add github-snake.svg
-          git commit -m "Update github-snake.svg - [skip actions]" github-snake.svg
+          git add github-snake-dark.svg
+          git commit -m "Update github-snake.svg - [skip actions]" github-snake.svg github-snake-dark.svg
           git push origin ${{ env.GITHUB_REF_NAME }}
