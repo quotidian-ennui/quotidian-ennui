@@ -1,4 +1,4 @@
-cd .g## About Me
+## About Me
 
 Sometimes I have things to say; you can find my assorted ramblings for your reading pleasure [here](https://quotidian-ennui.github.io).
 
