@@ -15,15 +15,15 @@ jobs:
       github.actor == 'dependabot[bot]'
     runs-on: ubuntu-latest
     steps:
-    - name: Find associated PR
-      uses: jwalton/gh-find-current-pr@v1
-      id: findpr
-      with:
-        github-token: ${{ github.token }}
-        state: open
-        sha: ${{ github.event.pull_request.head.sha || github.event.workflow_run.head_sha || github.sha }}
-    - name: merge
-      uses: fastify/github-action-merge-dependabot@v3
-      with:
-        pr-number: ${{ steps.findpr.outputs.pr }}
-        target: any
+      - name: Find associated PR
+        uses: jwalton/gh-find-current-pr@89ee5799558265a1e0e31fab792ebb4ee91c016b # v1.3.3
+        id: findpr
+        with:
+          github-token: ${{ github.token }}
+          state: open
+          sha: ${{ github.event.pull_request.head.sha || github.event.workflow_run.head_sha || github.sha }}
+      - name: merge
+        uses: fastify/github-action-merge-dependabot@e820d631adb1d8ab16c3b93e5afe713450884a4a # v3.11.1
+        with:
+          pr-number: ${{ steps.findpr.outputs.pr }}
+          target: any

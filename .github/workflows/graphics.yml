@@ -2,7 +2,7 @@
 name: readme-svg
 on:
   schedule:
-    - cron: '15 03 1 * *'
+    - cron: "15 03 1 * *"
   workflow_dispatch:
   push:
     branches: main
@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v5
-      - uses: Platane/snk@v3
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+      - uses: Platane/snk@a69d1dbca7a94c2ef0edf10dcd9e19982d74dd39 # v3.3.0
         id: badger-badger-snake-snake
         name: Generate Snake
         with:
@@ -29,5 +29,5 @@ jobs:
           git config user.email "<>"
           git add github-snake.svg
           git add github-snake-dark.svg
-          git commit -m "Update github-snake.svg - [skip actions]" github-snake.svg github-snake-dark.svg
+          git commit -m "chore: github-snake.svg - [skip actions]" github-snake.svg github-snake-dark.svg
           git push origin ${{ env.GITHUB_REF_NAME }}
