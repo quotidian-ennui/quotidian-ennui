@@ -4,6 +4,9 @@ on:
   pull_request_target:
     branches:
       - main
+
+permissions: {}
+
 # We only have github-actions enabled for dependabot so
 # we should be able to auto-merge.
 jobs:
