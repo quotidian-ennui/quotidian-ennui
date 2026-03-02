@@ -1,7 +1,7 @@
 name: dependabot-merge
 
 on:
-  pull_request_target:
+  pull_request:
     branches:
       - main
 
@@ -29,4 +29,4 @@ jobs:
         uses: fastify/github-action-merge-dependabot@1b2ed42db8f9d81a46bac83adedfc03eb5149dff # v3.11.2
         with:
           pr-number: ${{ steps.findpr.outputs.pr }}
-          target: any
+          target: minor
