@@ -6,5 +6,8 @@ updates:
     open-pull-requests-limit: 20
     schedule:
       interval: "weekly"
+      day: "wednesday"
+      time: "04:23"
+      timezone: Europe/London
     allow:
       - dependency-type: "all"
