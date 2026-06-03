@@ -3,11 +3,24 @@ version: 2
 updates:
   - package-ecosystem: "github-actions"
     directory: "/"
+    allow:
+      - dependency-type: "all"
+    commit-message:
+      prefix: "deps(actions): "
     open-pull-requests-limit: 20
+    rebase-strategy: disabled
+    cooldown:
+      default-days: 3
+      exclude:
+        - "quotidian-ennui/workflows-olio/*"
+        - "quotidian-ennui/actions-olio/*"
+    groups:
+      workflows-olio:
+        patterns:
+          - "quotidian-ennui/workflows-olio/*"
+          - "quotidian-ennui/actions-olio/*"
     schedule:
       interval: "weekly"
       day: "wednesday"
       time: "04:23"
       timezone: Europe/London
-    allow:
-      - dependency-type: "all"
